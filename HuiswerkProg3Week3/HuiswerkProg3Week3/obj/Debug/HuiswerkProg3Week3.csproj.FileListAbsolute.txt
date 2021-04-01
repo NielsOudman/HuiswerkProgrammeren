@@ -1,0 +1,7 @@
+C:\Users\niels\OneDrive\Documenten\Programmeren\HuiswerkProg3Week3\HuiswerkProg3Week3\bin\Debug\HuiswerkProg3Week3.exe.config
+C:\Users\niels\OneDrive\Documenten\Programmeren\HuiswerkProg3Week3\HuiswerkProg3Week3\bin\Debug\HuiswerkProg3Week3.exe
+C:\Users\niels\OneDrive\Documenten\Programmeren\HuiswerkProg3Week3\HuiswerkProg3Week3\bin\Debug\HuiswerkProg3Week3.pdb
+C:\Users\niels\OneDrive\Documenten\Programmeren\HuiswerkProg3Week3\HuiswerkProg3Week3\obj\Debug\HuiswerkProg3Week3.csprojAssemblyReference.cache
+C:\Users\niels\OneDrive\Documenten\Programmeren\HuiswerkProg3Week3\HuiswerkProg3Week3\obj\Debug\HuiswerkProg3Week3.csproj.CoreCompileInputs.cache
+C:\Users\niels\OneDrive\Documenten\Programmeren\HuiswerkProg3Week3\HuiswerkProg3Week3\obj\Debug\HuiswerkProg3Week3.exe
+C:\Users\niels\OneDrive\Documenten\Programmeren\HuiswerkProg3Week3\HuiswerkProg3Week3\obj\Debug\HuiswerkProg3Week3.pdb

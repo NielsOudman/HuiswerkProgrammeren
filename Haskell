@@ -1,0 +1,111 @@
+--Side Notes:
+-- Als je code niet werkt in Haskell kijk dan goed of je bij de typering ook bijvoorbeel int met een hoofdletter i schrijft want zo niet kan het alles op fucken
+--spaties kunnen soms je ook naaien
+
+
+-- het verschil van int en [int] is dat de [int] een lijst van ints is
+
+
+-- Opdracht A
+--1
+verhoog :: [Int] -> [Int]
+verhoog xs = [ x + 1| x <- xs]
+
+--2
+sumsqr :: Int -> Int
+sumsqr n = sum [x^2 | x <- [1..n]]
+
+--3
+fie :: [Int] -> [Int]
+fie xs = [ x*y | x <- xs , y <- [1,2,3]]
+
+--4
+opdracht4 :: [Int]
+opdracht4 = [x*x | x <-[1..30], x `mod` 4 /= 0]
+
+--5
+-- optioneel en niet nodig en ook niet nodig bij de toets dus daarom overgeslagen
+
+--6
+dezelfdeLetter :: String -> String -> [Int]
+dezelfdeLetter s1 s2 = [ z |((x,y),z) <- zip (zip s1 s2) [0..], x==y]
+dezelfdeLetter2 s1 s2 = [ z |(x,y,z) <- zip3 s1 s2 [0..], x==y]
+
+--Opdracht B
+weekdag :: String -> String
+
+weekdag "Maandag" = "Begin (werk)week"
+weekdag "Dinsdag" = "Analoog Atalier"
+weekdag "Woensdag" = "Midden werkweek"
+weekdag "Donderdag" = "Willekeurige dag"
+weekdag "Vrijdag" = "Bijna weekend"
+weekdag "Zaterdag" = "Begin weekend"
+weekdag "Zondag" = "Vrijhouden voor noodgevallen"
+weekdag x = "Ongeldig, gebruik een weekdag met een hoofdletter"
+
+--Opdracht C
+
+
+--1
+delers :: Int -> [Int]
+delers n = [ d | d <- [1..n], n `mod` d == 0]
+
+--2
+ispriemgetal :: Int -> Bool
+ispriemgetal n = length (delers n) == 2
+
+--3 
+perfect :: [Int]
+perfect = [ x | x <- [1..100], sum(init(delers x)) == x]
+
+perfect2 n = [ x | x <- [1..n], sum(init(delers x)) == x]
+
+--4
+ggd :: Int -> Int -> Int
+ggd n m = maximum [ x | x <- delers n, y <- delers m, x == y]
+
+-- Opdracht D
+-- De x > y zorgt ervoor dat er geen meerdere uitkomsten zijn voor z
+pythagoras :: Int -> [(Int, Int, Int)]
+pythagoras n = [(x,y,z)| x<-[1..n], y <-[1..n], z <-[1..n], x^2 + y^2 == z^2, x > y]
+--zo kan je nog sneller door de lijst lopen volgens Sarah maar bij mij duurde het langer lmao
+pythagorasSneller n = [(x,y,z)| x<-[1..n], y <-[1..n], z <-[1..n], x^2 + y^2 == z^2]
+--dit is pittig snel door de 1 te vervangen voor de waarde van x en y
+pythagorasSnelst n = [(x,y,z)| x<-[1..n], y <-[x..n], z <-[y..n], x^2 + y^2 == z^2]
+
+-- week 4
+--opdracht A
+
+--1
+remove _ [] = []
+remove n (x:xs) = if x /= n then [x] ++ remove n xs else remove n xs
+
+--2
+removeOnce _ [] = []
+removeOnce n (x:xs) = if x/= n then [x] ++ removeOnce n xs else xs
+
+--3
+subset _ [] = False
+subset [] _ = False
+subset (x:[]) ys = elem x ys
+subset (x:xs) ys = if elem x ys then subset xs ys else False
+
+--4
+myLast (x:[]) = x
+myLast (x:xs) = myLast xs
+
+--5
+langstebeginplateau [] =[]
+langstebeginplateau (x:[]) = [x]
+langstebeginplateau (x:xs) = if x == (head xs) then [x] ++ langstebeginplateau xs else [x]
+ 
+ --6
+myMerge :: (Ord a) => [a] -> [a] -> [a]
+myMerge xs [] = xs
+myMerge [] xs = xs
+myMerge (x:xs) (y:ys) = if x < y then [x]++ myMerge xs (y:ys)
+                                else [y] ++ myMerge (x:xs) ys
+
+ 
+
+
